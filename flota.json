@@ -1,0 +1,144 @@
+{
+  "fecha": "2026-02-08",
+  "buses": [
+    {
+      "id": 1,
+      "interno": "A12",
+      "patente": "AB123CD",
+      "modelo": "Mercedes-Benz OH 1621",
+      "anio": 2018,
+      "capacidad": 50,
+      "estado": "activa",
+      "kmTotal": 420000,
+      "kmDesdeUltimoService": 12000,
+      "proximoMantenimientoKm": 15000,
+      "service": [
+        {
+          "fecha": "2026-01-15",
+          "tipo": "service",
+          "detalle": "Cambio de aceite y filtros",
+          "km": 408000
+        },
+        {
+          "fecha": "2026-02-06",
+          "tipo": "falla",
+          "detalle": "Ruido en suspensión delantera",
+          "reportadoPor": "Chofer Juan Pérez"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "interno": "B07",
+      "patente": "AC456EF",
+      "modelo": "Volkswagen 17.230",
+      "anio": 2020,
+      "capacidad": 45,
+      "estado": "mantenimiento",
+      "kmTotal": 310000,
+      "kmDesdeUltimoService": 18000,
+      "proximoMantenimientoKm": 15000,
+      "multas": [
+        {
+          "id": 1,
+          "fecha": "2026-02-02",
+          "tipo": "Exceso de velocidad",
+          "lugar": "Ruta 8 km 35",
+          "monto": 90000,
+          "estado": "pendiente",
+          "responsable": "chofer"
+        }
+      ],
+      "service": [
+        {
+          "fecha": "2026-02-05",
+          "tipo": "mantenimiento",
+          "detalle": "Frenos y alineación",
+          "taller": "Taller Central"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "interno": "C03",
+      "patente": "AD789GH",
+      "modelo": "Scania K250",
+      "anio": 2017,
+      "capacidad": 55,
+      "estado": "activa",
+      "kmTotal": 510000,
+      "kmDesdeUltimoService": 9000,
+      "proximoMantenimientoKm": 15000,
+      "service": [
+        {
+          "fecha": "2026-01-20",
+          "tipo": "service",
+          "detalle": "Service completo",
+          "km": 501000
+        }
+      ],
+      "multas": [
+        {
+          "id": 2,
+          "fecha": "2025-12-18",
+          "tipo": "Semáforo en rojo",
+          "lugar": "Av. San Martín y Corrientes",
+          "monto": 120000,
+          "estado": "pagada",
+          "responsable": "empresa"
+        },
+        {
+          "id": 3,
+          "fecha": "2026-01-28",
+          "tipo": "Falta de VTV",
+          "lugar": "Control municipal",
+          "monto": 150000,
+          "estado": "pendiente",
+          "responsable": "empresa"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "interno": "D19",
+      "patente": "AE321JK",
+      "modelo": "Mercedes-Benz OH 1718",
+      "anio": 2015,
+      "capacidad": 48,
+      "estado": "fuera_de_servicio",
+      "kmTotal": 620000,
+      "kmDesdeUltimoService": 30000,
+      "proximoMantenimientoKm": 15000,
+      "service": [
+        {
+          "fecha": "2026-02-01",
+          "tipo": "falla",
+          "detalle": "Caja de cambios dañada",
+          "reportadoPor": "Chofer Luis Gómez"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "interno": "E02",
+      "patente": "AF654LM",
+      "modelo": "Agrale MT 17",
+      "anio": 2012,
+      "capacidad": 40,
+      "estado": "baja_definitiva",
+      "kmTotal": 780000,
+      "kmDesdeUltimoService": 0,
+      "proximoMantenimientoKm": null,
+      "service": [
+        {
+          "fecha": "2025-11-10",
+          "tipo": "baja",
+          "detalle": "Unidad fuera de norma, no rentable reparar"
+        }
+      ]
+    }
+  ],
+  "diagrama": {
+    "unidadesNecesariasHoy": 4
+  }
+}

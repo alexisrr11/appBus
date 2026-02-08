@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Gestión de Flota - MVP</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="/scripts/menu.js"></script>
+    <script type="module" src="../estadosGenerales.js"></script>
+    <script type="module" src="./estadoSelecionado.js"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-800 h-screen flex flex-col">
+
+    <!-- Header -->
+    <header class="bg-blue-900 text-white p-4 flex justify-between items-center">
+        <div>
+            <h1 class="text-2xl font-bold">🚍 Gestión de Flota</h1>
+            <p class="text-sm text-blue-200">Panel operativo diario</p>
+        </div>
+
+        <!-- Botón mobile -->
+        <button id="btn-menu" class="md:hidden text-2xl">
+            ☰
+        </button>
+    </header>
+
+    <!-- Layout -->
+    <div class="flex flex-1 relative">
+
+        <!-- Sidebar -->
+        <aside id="sidebar" class="fixed md:static z-40 w-64 h-full bg-blue-800 text-white flex flex-col
+                   transform -translate-x-full md:translate-x-0 transition-transform duration-300">
+            <nav class="flex-1 p-4 space-y-2">
+
+                <a href="/index.html" class="block px-4 py-2 rounded hover:bg-blue-700">
+                    🚍 Toda la Flota
+                </a>
+
+                <a href="/estadoGeneral.html" class="block px-4 py-2 rounded bg-blue-500">
+                    📊 Estados generales
+                </a>
+
+                <a href="/multas/multas.html" class="block px-4 py-2 rounded hover:bg-blue-700">
+                    🚨 Multas
+                </a>
+
+                <a href="/mantenimiento/mantenimiento.html" class="block px-4 py-2 rounded hover:bg-blue-700">
+                    🔧 Mantenimiento
+                </a>
+
+                <a href="/reportes/reportes.html" class="block px-4 py-2 rounded hover:bg-blue-700">
+                    📑Agregar Reportes
+                </a>
+
+                <a href="/agregarUnidad/agregarUnidad.html" class="block px-4 py-2 rounded hover:bg-blue-700">
+                    ➕Agregar unidad
+                </a>
+
+                <a href="/retirarUnidad/retirarUnidad.html" class="block px-4 py-2 rounded hover:bg-blue-700">
+                    ❌Retirar unidad
+                </a>
+
+            </nav>
+        </aside>
+
+        <!-- Overlay mobile -->
+        <div id="overlay" class="fixed inset-0 bg-black bg-opacity-40 hidden md:hidden z-30"></div>
+
+        <!-- Main content -->
+        <main class="flex-1 p-6 overflow-auto">
+
+            <h2 id="listado-titulo"
+                class="text-3xl text-blue-700 font-bold text-center mb-6">
+
+            </h2>
+            <div id="listado-unidades" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+        </main>
+    </div>
+
+</body>
+
+</html>

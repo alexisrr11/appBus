@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Gestión de Flota - MVP</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="../scripts/menu.js"></script>
+    <script type="module" src="./reportes.js"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-800 h-screen flex flex-col">
+
+    <!-- Header -->
+    <header class="bg-blue-900 text-white p-4 flex justify-between items-center">
+        <div>
+            <h1 class="text-2xl font-bold">🚍 Gestión de Flota</h1>
+            <p class="text-sm text-blue-200">Panel operativo diario</p>
+        </div>
+
+        <!-- Botón mobile -->
+        <button id="btn-menu" class="md:hidden text-2xl">
+            ☰
+        </button>
+    </header>
+
+    <!-- Layout -->
+    <div class="flex flex-1 relative">
+
+        <!-- Sidebar -->
+        <aside id="sidebar" class="fixed md:static z-40 w-64 h-full bg-blue-800 text-white flex flex-col
+                   transform -translate-x-full md:translate-x-0 transition-transform duration-300">
+            <nav class="flex-1 p-4 space-y-2">
+
+                <a href="../index.html" class="block px-4 py-2 rounded hover:bg-blue-700">
+                    🚍 Toda la Flota
+                </a>
+
+                <a href="../estadosGenerales.html/estadoGeneral.html" class="block px-4 py-2 rounded hover:bg-blue-700">
+                    📊 Estados generales
+                </a>
+
+                <a href="../multas/multas.html" class="block px-4 py-2 rounded hover:bg-blue-700">
+                    🚨 Multas
+                </a>
+
+                <a href="../mantenimiento/mantenimiento.html" class="block px-4 py-2 rounded hover:bg-blue-700">
+                    🔧 Mantenimiento
+                </a>
+
+                <a class="block px-4 py-2 rounded bg-blue-500">
+                    📑Agregar Reportes
+                </a>
+
+                <a href="../agregarUnidad/agregarUnidad.html" class="block px-4 py-2 rounded hover:bg-blue-700">
+                    ➕Agregar unidad
+                </a>
+
+                <a href="../retirarUnidad/retirarUnidad.html" class="block px-4 py-2 rounded hover:bg-blue-700">
+                    ❌Retirar unidad
+                </a>
+
+            </nav>
+        </aside>
+
+        <!-- Overlay mobile -->
+        <div id="overlay" class="fixed inset-0 bg-black bg-opacity-40 hidden md:hidden z-30"></div>
+
+        <!-- Main content -->
+        <main class="flex-1 p-6 overflow-auto">
+
+            <h2 class="text-3xl text-blue-700 font-bold text-center border-b-4 border-blue-700 mb-6">
+                NUEVOS REPORTES
+            </h2>
+
+            <div class="bg-white p-6 rounded shadow mb-6">
+                <h3 class="text-xl font-bold text-blue-800 mb-4">Agregar nuevo reporte</h3>
+
+                <form id="form-reporte" class="space-y-4">
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Bus (interno)</label>
+                        <select id="bus-reporte" class="mt-1 block w-full p-2 border rounded">
+                            <!-- Opciones se llenan por JS -->
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Fecha</label>
+                        <input type="date" id="fecha-reporte" class="mt-1 block w-full p-2 border rounded" required>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Detalle del reporte</label>
+                        <textarea id="detalle-reporte" class="mt-1 block w-full p-2 border rounded" rows="3"
+                            required></textarea>
+                    </div>
+
+                    <button type="submit" class="bg-blue-800 text-white px-4 py-2 rounded hover:bg-blue-900">
+                        Agregar Reporte
+                    </button>
+
+                </form>
+            </div>
+
+
+        </main>
+    </div>
+
+</body>
+
+</html>
