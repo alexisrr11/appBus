@@ -57,7 +57,7 @@ function renderUnidad(bus) {
       ${estadoTexto(bus.estado)}
     </p>
 
-    <a href="/historial/historial.html?id=${bus.id}"
+    <a href="../../historial/historial.html?id=${bus.id}"
        class="text-blue-500 text-sm mt-3 inline-block">
        Ver historial →
     </a>
