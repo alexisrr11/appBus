@@ -13,7 +13,7 @@ init();
 
 async function init() {
     try {
-        const res = await fetch("/flota.json");
+        const res = await fetch("../flota.json");
         const data = await res.json();
 
         // Obtener todos los mantenimientos de todos los buses
