@@ -10,7 +10,7 @@ async function init() {
     return;
   }
 
-  const res = await fetch("/flota.json");
+  const res = await fetch("../../flota.json");
   const data = await res.json();
 
   const busesFiltrados = data.buses.filter(
