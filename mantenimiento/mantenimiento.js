@@ -16,8 +16,8 @@ async function init() {
         const res = await fetch("../flota.json");
         const data = await res.json();
 
-        // Obtener todos los mantenimientos de todos los buses
         const mantenimientos = [];
+
         data.buses.forEach(bus => {
             if (bus.service && bus.service.length) {
                 bus.service.forEach(s => {
@@ -37,24 +37,15 @@ async function init() {
 
         todosLosMantenimientos = mantenimientos;
 
-        // Render inicial
+        // ✅ UN SOLO RENDER
         renderListado(todosLosMantenimientos);
-
-        // Renderizar
-        if (mantenimientos.length === 0) {
-            contenedor.innerHTML = `<p class="text-gray-500">No hay mantenimientos registrados</p>`;
-            return;
-        }
-
-        mantenimientos.forEach(m => contenedor.appendChild(renderMantenimientoCard(m)));
-
-
 
     } catch (error) {
         console.error("Error cargando mantenimientos:", error);
         contenedor.innerHTML = `<p class="text-red-500">Error cargando mantenimientos</p>`;
     }
 }
+
 
 // Render de cada tarjeta de mantenimiento
 function renderMantenimientoCard(m) {

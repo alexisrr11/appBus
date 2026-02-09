@@ -103,18 +103,22 @@ function botonHistorial(bus) {
     if (bus.estado === "baja_definitiva") {
         return `
       <button class="bg-gray-400 text-white px-3 py-1 rounded cursor-not-allowed">
-        Ver historial
+        <span class="hidden sm:inline">Ver historial</span>
+        <span class="sm:hidden">Historial</span>
       </button>
     `;
     }
 
     return `
     <a
-      href="./historial/historial.html?id=${bus.id}"
-      class="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 transition"
-    >
-      Ver historial
+        href="./historial/historial.html?id=${bus.id}"
+        class="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 transition whitespace-nowrap"
+        >
+          <span class="hidden sm:inline">Ver historial</span>
+          <span class="sm:hidden">Historial</span>
     </a>
+
+
   `;
 }
 
