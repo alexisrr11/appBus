@@ -60,15 +60,23 @@ function renderHistorial(bus) {
         renderMultaCard
     );
 
+    const habilitacionesHistorial = normalizarHabilitaciones(bus.habilitaciones);
+
     renderBloque(
-        "📑 REPORTES",
-        bus.reportes || [],
-        renderReporteCard
+        "📄 HABILITACIONES",
+        habilitacionesHistorial,
+        renderHabilitacionCard
     );
 }
 
+
+
 function renderBloque(titulo, items, renderFn) {
-    if (!items || items.length === 0) return;
+    if (!Array.isArray(items)) {
+        items = items ? [items] : [];
+    }
+
+    if (items.length === 0) return;
 
     const h4 = document.createElement("h4");
     h4.className = "text-xl font-bold text-gray-700 mt-8 mb-3";
@@ -80,7 +88,6 @@ function renderBloque(titulo, items, renderFn) {
         container.appendChild(renderFn(item));
     });
 }
-
 
 /* ===============================
    RENDER SERVICE CARD
@@ -140,6 +147,36 @@ function renderMultaCard(multa) {
 }
 
 /* ===============================
+   RENDER HABILITACIONES CARD
+================================ */
+
+function renderHabilitacionCard(hab) {
+    const card = document.createElement("div");
+
+    const estado = hab.vigente ? "vigente" : "vencida";
+
+    card.className = `
+        bg-white p-4 rounded shadow border-l-4
+        ${estado === "vigente" ? "border-green-500" : "border-red-500"}
+    `;
+
+    card.innerHTML = `
+        <div class="flex justify-between text-sm text-gray-500 mb-1">
+            <span>${hab.fechaVencimiento || hab.fecha || "-"}</span>
+            <span class="font-semibold">${hab.tipo}</span>
+        </div>
+
+        ${hab.detalle ? `<p class="text-sm text-gray-700">${hab.detalle}</p>` : ""}
+
+        ${hab.organismo ? `<p class="text-xs text-gray-500">🏛️ ${hab.organismo}</p>` : ""}
+    `;
+
+    return card;
+}
+
+
+
+/* ===============================
    HELPERS
 ================================ */
 
@@ -175,6 +212,77 @@ function estadoTexto(estado) {
     return map[estado] || estado;
 }
 
+function colorPorHabilitacion(hab) {
+    const map = {
+        vigente: "border-green-500",
+        por_vencer: "border-yellow-500",
+        vencida: "border-red-500"
+    };
+    return map[hab.estado] || "border-gray-400";
+}
+
+function estadoHabilitacionTexto(estado) {
+    const map = {
+        vigente: "🟢 Vigente",
+        por_vencer: "🟡 Por vencer",
+        vencida: "🔴 Vencida"
+    };
+    return map[estado] || estado;
+}
+
+//Normalizar habilitaciones
+function normalizarHabilitaciones(habilitaciones) {
+    if (!habilitaciones) return [];
+
+    const eventos = [];
+
+    if (habilitaciones.vtv) {
+        eventos.push({
+            tipo: "VTV",
+            vigente: habilitaciones.vtv.vigente,
+            fechaVencimiento: habilitaciones.vtv.vence
+        });
+    }
+
+    if (habilitaciones.seguro) {
+        eventos.push({
+            tipo: "Seguro",
+            vigente: habilitaciones.seguro.vigente,
+            fechaVencimiento: habilitaciones.seguro.vence,
+            detalle: `${habilitaciones.seguro.compania} · Póliza ${habilitaciones.seguro.poliza}`
+        });
+    }
+
+    if (habilitaciones.habilitacionTransporte) {
+        eventos.push({
+            tipo: "Habilitación CNRT",
+            vigente: habilitaciones.habilitacionTransporte.vigente,
+            fechaVencimiento: habilitaciones.habilitacionTransporte.vence,
+            organismo: habilitaciones.habilitacionTransporte.organismo
+        });
+    }
+
+    if (habilitaciones.extintor) {
+        eventos.push({
+            tipo: "Extintor",
+            vigente: habilitaciones.extintor.vigente,
+            fechaVencimiento: habilitaciones.extintor.vence
+        });
+    }
+
+    if (habilitaciones.tacografo) {
+        eventos.push({
+            tipo: "Tacógrafo",
+            vigente: habilitaciones.tacografo.funcionando,
+            fecha: habilitaciones.tacografo.ultimaCalibracion,
+            detalle: "Última calibración"
+        });
+    }
+
+    return eventos;
+}
+
+
 function renderReporteCard(reporte) {
     const card = document.createElement("div");
     card.className = "bg-white p-4 rounded shadow border-l-4 border-blue-500";
@@ -190,6 +298,5 @@ function renderReporteCard(reporte) {
 
     return card;
 }
-
 
 init();

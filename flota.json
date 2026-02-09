@@ -12,6 +12,34 @@
       "kmTotal": 420000,
       "kmDesdeUltimoService": 12000,
       "proximoMantenimientoKm": 15000,
+      "habilitaciones": {
+        "vtv": {
+          "vigente": true,
+          "vence": "2026-08-10"
+        },
+        "seguro": {
+          "vigente": true,
+          "compania": "La Segunda",
+          "poliza": "RC-458712",
+          "vence": "2026-05-01"
+        },
+        "habilitacionTransporte": {
+          "organismo": "CNRT",
+          "vigente": true,
+          "vence": "2026-12-31"
+        },
+        "tacografo": {
+          "instalado": true,
+          "funcionando": true,
+          "ultimaCalibracion": "2025-11-20"
+        },
+        "extintor": {
+          "vigente": true,
+          "vence": "2026-10-15"
+        },
+        "aptaParaCircular": true,
+        "observaciones": "Falla en suspensión reportada, no inmoviliza la unidad"
+      },
       "service": [
         {
           "fecha": "2026-01-15",
@@ -38,6 +66,34 @@
       "kmTotal": 310000,
       "kmDesdeUltimoService": 18000,
       "proximoMantenimientoKm": 15000,
+      "habilitaciones": {
+        "vtv": {
+          "vigente": true,
+          "vence": "2026-09-20"
+        },
+        "seguro": {
+          "vigente": true,
+          "compania": "Sancor Seguros",
+          "poliza": "RC-998712",
+          "vence": "2026-06-30"
+        },
+        "habilitacionTransporte": {
+          "organismo": "CNRT",
+          "vigente": true,
+          "vence": "2026-12-31"
+        },
+        "tacografo": {
+          "instalado": true,
+          "funcionando": true,
+          "ultimaCalibracion": "2025-12-05"
+        },
+        "extintor": {
+          "vigente": true,
+          "vence": "2026-11-10"
+        },
+        "aptaParaCircular": false,
+        "observaciones": "Unidad en mantenimiento preventivo (frenos y alineación)"
+      },
       "multas": [
         {
           "id": 1,
@@ -69,6 +125,34 @@
       "kmTotal": 510000,
       "kmDesdeUltimoService": 9000,
       "proximoMantenimientoKm": 15000,
+      "habilitaciones": {
+        "vtv": {
+          "vigente": false,
+          "vence": "2026-01-15"
+        },
+        "seguro": {
+          "vigente": true,
+          "compania": "Federación Patronal",
+          "poliza": "RC-774455",
+          "vence": "2026-04-10"
+        },
+        "habilitacionTransporte": {
+          "organismo": "CNRT",
+          "vigente": true,
+          "vence": "2026-12-31"
+        },
+        "tacografo": {
+          "instalado": true,
+          "funcionando": true,
+          "ultimaCalibracion": "2025-10-12"
+        },
+        "extintor": {
+          "vigente": true,
+          "vence": "2026-07-01"
+        },
+        "aptaParaCircular": false,
+        "observaciones": "VTV vencida, pendiente regularización"
+      },
       "service": [
         {
           "fecha": "2026-01-20",
@@ -109,6 +193,34 @@
       "kmTotal": 620000,
       "kmDesdeUltimoService": 30000,
       "proximoMantenimientoKm": 15000,
+      "habilitaciones": {
+        "vtv": {
+          "vigente": true,
+          "vence": "2026-06-05"
+        },
+        "seguro": {
+          "vigente": true,
+          "compania": "Provincia Seguros",
+          "poliza": "RC-663322",
+          "vence": "2026-03-15"
+        },
+        "habilitacionTransporte": {
+          "organismo": "CNRT",
+          "vigente": true,
+          "vence": "2026-12-31"
+        },
+        "tacografo": {
+          "instalado": true,
+          "funcionando": false,
+          "ultimaCalibracion": "2024-09-01"
+        },
+        "extintor": {
+          "vigente": true,
+          "vence": "2026-08-20"
+        },
+        "aptaParaCircular": false,
+        "observaciones": "Caja de cambios dañada, unidad inmovilizada"
+      },
       "service": [
         {
           "fecha": "2026-02-01",
@@ -129,6 +241,34 @@
       "kmTotal": 780000,
       "kmDesdeUltimoService": 0,
       "proximoMantenimientoKm": null,
+      "habilitaciones": {
+        "vtv": {
+          "vigente": false,
+          "vence": null
+        },
+        "seguro": {
+          "vigente": false,
+          "compania": null,
+          "poliza": null,
+          "vence": null
+        },
+        "habilitacionTransporte": {
+          "organismo": "CNRT",
+          "vigente": false,
+          "vence": null
+        },
+        "tacografo": {
+          "instalado": false,
+          "funcionando": false,
+          "ultimaCalibracion": null
+        },
+        "extintor": {
+          "vigente": false,
+          "vence": null
+        },
+        "aptaParaCircular": false,
+        "observaciones": "Unidad dada de baja definitiva"
+      },
       "service": [
         {
           "fecha": "2025-11-10",

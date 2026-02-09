@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestión de Flota - MVP</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="../scripts/menu.js"></script>
+    <script type="module" src="./habilitaciones.js"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-800 h-screen flex flex-col">
+
+    <!-- Header -->
+    <header class="bg-blue-900 text-white p-4 flex justify-between items-center">
+        <!-- Botón mobile -->
+        <button id="btn-menu" class="md:hidden text-2xl">
+            ☰
+        </button>
+
+        <div>
+            <h1 class="text-2xl font-bold">🚍 Gestión de Flota</h1>
+            <p class="text-sm text-blue-200 text-end">Panel operativo diario</p>
+        </div>
+
+
+    </header>
+
+    <!-- Layout -->
+    <div class="flex flex-1 relative">
+
+        <!-- Sidebar -->
+        <aside id="sidebar" class="fixed md:static z-40 w-64 h-full bg-blue-800 text-white flex flex-col
+                   transform -translate-x-full md:translate-x-0 transition-transform duration-300">
+            <nav class="flex-1 p-4 space-y-2">
+
+                <a href="../index.html" class="block px-4 py-2 rounded hover:bg-blue-700">
+                    🚍 Toda la Flota
+                </a>
+
+                <a href="../estadosGenerales.html/estadoGeneral.html" class="block px-4 py-2 rounded hover:bg-blue-700">
+                    📊 Estados generales
+                </a>
+
+                <a class="block px-4 py-2 rounded bg-blue-500">
+                    📜Habilitaciones
+                </a>
+
+                <a href="../multas/multas.html" class="block px-4 py-2 rounded hover:bg-blue-700">
+                    🚨 Multas
+                </a>
+
+                <a href="../mantenimiento/mantenimiento.html" class="block px-4 py-2 rounded hover:bg-blue-700">
+                    🔧 Mantenimiento
+                </a>
+
+                <a href="../reportes/reportes.html" class="block px-4 py-2 rounded hover:bg-blue-700">
+                    📑Agregar Reportes
+                </a>
+
+                <a href="../agregarUnidad/agregarUnidad.html" class="block px-4 py-2 rounded hover:bg-blue-700">
+                    ➕Agregar unidad
+                </a>
+
+                <a href="../retirarUnidad/retirarUnidad.html" class="block px-4 py-2 rounded hover:bg-blue-700">
+                    ❌Retirar unidad
+                </a>
+
+            </nav>
+        </aside>
+
+        <!-- Overlay mobile -->
+        <div id="overlay" class="fixed inset-0 bg-black bg-opacity-40 hidden md:hidden z-30"></div>
+
+        <!-- Main content -->
+        <main class="flex-1 p-6 overflow-auto">
+
+            <h2 class="text-3xl text-blue-700 font-bold text-center border-b-4 border-blue-700 mb-6">
+                HABILITACIONES
+            </h2>
+
+            <section class="max-w-3xl mx-auto bg-white p-6 mb-10 rounded shadow">
+
+                <h3 class="text-2xl font-bold text-blue-700 mb-4">
+                    📜 Agregar / Modificar Habilitación <button id="btn-form-habilitacion">➕</button>
+                </h3>
+
+                <form id="form-habilitacion" class="hidden space-y-5">
+
+                    <!-- Unidad -->
+                    <div>
+                        <label class="block text-sm font-semibold mb-1">
+                            Unidad (interno)
+                        </label>
+                        <select class="w-full p-2 border rounded">
+                            <option value="">Seleccionar interno</option>
+                            <option>A12</option>
+                            <option>B07</option>
+                            <option>C03</option>
+                            <option>D19</option>
+                        </select>
+                    </div>
+
+                    <!-- Tipo de habilitación -->
+                    <div>
+                        <label class="block text-sm font-semibold mb-1">
+                            Tipo de habilitación
+                        </label>
+                        <select class="w-full p-2 border rounded">
+                            <option value="">Seleccionar tipo</option>
+                            <option value="vtv">VTV</option>
+                            <option value="seguro">Seguro</option>
+                            <option value="habilitacionTransporte">Habilitación de Transporte</option>
+                            <option value="tacografo">Tacógrafo</option>
+                            <option value="extintor">Extintor</option>
+                        </select>
+                    </div>
+
+                    <!-- Fecha de vencimiento -->
+                    <div>
+                        <label class="block text-sm font-semibold mb-1">
+                            Fecha de vencimiento
+                        </label>
+                        <input type="date" class="w-full p-2 border rounded" required />
+                    </div>
+
+                    <!-- Organismo / compañía -->
+                    <div>
+                        <label class="block text-sm font-semibold mb-1">
+                            Organismo / Compañía
+                        </label>
+                        <input type="text" placeholder="CNRT / Municipalidad / Aseguradora"
+                            class="w-full p-2 border rounded" />
+                    </div>
+
+                    <!-- Observaciones -->
+                    <div>
+                        <label class="block text-sm font-semibold mb-1">
+                            Observaciones
+                        </label>
+                        <textarea rows="3" placeholder="Notas adicionales" class="w-full p-2 border rounded"></textarea>
+                    </div>
+
+                    <!-- Acciones -->
+                    <div class="flex justify-end gap-3 pt-4">
+                        <button type="reset" class="px-4 py-2 border rounded hover:bg-gray-100">
+                            Cancelar
+                        </button>
+
+                        <button type="submit" class="px-6 py-2 bg-blue-700 text-white rounded hover:bg-blue-800">
+                            Guardar habilitación
+                        </button>
+                    </div>
+
+                </form>
+
+            </section>
+
+
+            <section class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+                <div>
+                    <h3 class="text-xl font-bold text-red-600 mb-3">🔴 Vencidas</h3>
+                    <div id="habilitaciones-vencidas" class="space-y-3"></div>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold text-yellow-600 mb-3">🟡 Por vencer (30 días)</h3>
+                    <div id="habilitaciones-por-vencer" class="space-y-3"></div>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold text-green-600 mb-3">🟢 Vigentes</h3>
+                    <div id="habilitaciones-vigentes" class="space-y-3"></div>
+                </div>
+
+            </section>
+
+
+        </main>
+    </div>
+
+</body>
+
+</html>
