@@ -18,13 +18,13 @@
         <button id="btn-menu" class="md:hidden text-2xl">
             ☰
         </button>
-        
+
         <div>
             <h1 class="text-2xl font-bold">🚍 Gestión de Flota</h1>
             <p class="text-sm text-blue-200 text-end">Panel operativo diario</p>
         </div>
 
-        
+
     </header>
 
     <!-- Layout -->
@@ -82,6 +82,17 @@
 
             <!-- Filtros -->
             <div class="bg-white rounded shadow p-4 mb-6 flex flex-col md:flex-row gap-4">
+                <div class="flex flex-col">
+                    <label class="text-sm font-semibold text-gray-600">Estado</label>
+                    <select id="filtro-estado"
+                        class="border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <option value="">Todos</option>
+                        <option value="activa" class="text-green-500">🟢Activa</option>
+                        <option value="mantenimiento" class="text-yellow-500">🟡Mantenimiento</option>
+                        <option value="fuera_de_servicio" class="text-red-500">🔴Fuera de servicio</option>
+                        <option value="baja_definitiva">⚫Baja definitiva</option>
+                    </select>
+                </div>
 
                 <div class="flex flex-col">
                     <label class="text-sm font-semibold text-gray-600">Interno</label>

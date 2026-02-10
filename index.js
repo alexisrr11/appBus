@@ -123,12 +123,14 @@ function botonHistorial(bus) {
 }
 
 /* =========================
-   Filtro
+   Filtros
 ========================= */
 
 const filtroInterno = document.getElementById("filtro-interno");
 const filtroPatente = document.getElementById("filtro-patente");
+const filtroEstado = document.getElementById("filtro-estado");
 
+filtroEstado.addEventListener("change", aplicarFiltros);
 filtroInterno.addEventListener("input", aplicarFiltros);
 filtroPatente.addEventListener("input", aplicarFiltros);
 
@@ -143,6 +145,10 @@ function aplicarFiltros() {
         .value
         .toLowerCase();
 
+    const estadoValue = document
+        .getElementById("filtro-estado")
+        .value;
+
     const filtrados = busesGlobal.filter(bus => {
         const internoMatch = bus.interno
             .toLowerCase()
@@ -152,9 +158,13 @@ function aplicarFiltros() {
             .toLowerCase()
             .includes(patenteValue);
 
-        return internoMatch && patenteMatch;
+        const estadoMatch =
+            estadoValue === "" || bus.estado === estadoValue;
+
+        return internoMatch && patenteMatch && estadoMatch;
     });
 
     const tablaFlota = document.getElementById("tabla-flota");
     renderFlota(filtrados, tablaFlota);
 }
+
