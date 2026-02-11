@@ -33,7 +33,7 @@
         <!-- Sidebar -->
         <aside id="sidebar" class="fixed md:static z-40 w-64 h-full bg-blue-800 text-white flex flex-col
                    transform -translate-x-full md:translate-x-0 transition-transform duration-300">
-            <nav class="flex-1 p-4 space-y-2">
+            <nav class="relative flex-1 p-4 space-y-2">
 
                 <a class="block px-4 py-2 rounded bg-blue-500">
                     🚍 Toda la Flota
@@ -67,7 +67,9 @@
                     ❌Retirar unidad
                 </a>
 
+                <p id="version" class="absolute bottom-24 text-xs text-center p-3 md:bottom-1"></p>
             </nav>
+            
         </aside>
 
         <!-- Overlay mobile -->

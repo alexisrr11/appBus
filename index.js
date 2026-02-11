@@ -1,5 +1,7 @@
+const versionApp = "V1.01.1";
 let busesGlobal = [];
 
+document.getElementById("version").textContent = versionApp;
 document.addEventListener("DOMContentLoaded", () => {
     init();
 });
