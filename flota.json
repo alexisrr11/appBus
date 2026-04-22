@@ -1,5 +1,9 @@
 {
-  "fecha": "2026-02-08",
+  "fecha": "2026-04-22",
+  "empresa": {
+    "nombre": "Transporte Ejemplo S.A.",
+    "ultimaActualizacion": "2026-04-22T10:30:00-03:00"
+  },
   "buses": [
     {
       "id": 1,
@@ -9,9 +13,11 @@
       "anio": 2018,
       "capacidad": 50,
       "estado": "activa",
-      "kmTotal": 420000,
-      "kmDesdeUltimoService": 12000,
+      "kmTotal": 435500,
+      "kmDesdeUltimoService": 5500,
       "proximoMantenimientoKm": 15000,
+      "ubicacionActual": "Terminal Central",
+      "choferAsignado": "Juan Pérez",
       "habilitaciones": {
         "vtv": {
           "vigente": true,
@@ -31,14 +37,14 @@
         "tacografo": {
           "instalado": true,
           "funcionando": true,
-          "ultimaCalibracion": "2025-11-20"
+          "ultimaCalibracion": "2026-03-15"
         },
         "extintor": {
           "vigente": true,
           "vence": "2026-10-15"
         },
         "aptaParaCircular": true,
-        "observaciones": "Falla en suspensión reportada, no inmoviliza la unidad"
+        "observaciones": "Suspensión reparada y unidad operativa"
       },
       "service": [
         {
@@ -52,6 +58,13 @@
           "tipo": "falla",
           "detalle": "Ruido en suspensión delantera",
           "reportadoPor": "Chofer Juan Pérez"
+        },
+        {
+          "fecha": "2026-03-02",
+          "tipo": "reparacion",
+          "detalle": "Reparación completa de suspensión delantera",
+          "taller": "Taller Central",
+          "km": 430000
         }
       ]
     },
@@ -62,10 +75,12 @@
       "modelo": "Volkswagen 17.230",
       "anio": 2020,
       "capacidad": 45,
-      "estado": "mantenimiento",
-      "kmTotal": 310000,
-      "kmDesdeUltimoService": 18000,
+      "estado": "activa",
+      "kmTotal": 326000,
+      "kmDesdeUltimoService": 2000,
       "proximoMantenimientoKm": 15000,
+      "ubicacionActual": "En recorrido",
+      "choferAsignado": "Carlos Medina",
       "habilitaciones": {
         "vtv": {
           "vigente": true,
@@ -85,14 +100,14 @@
         "tacografo": {
           "instalado": true,
           "funcionando": true,
-          "ultimaCalibracion": "2025-12-05"
+          "ultimaCalibracion": "2026-02-18"
         },
         "extintor": {
           "vigente": true,
           "vence": "2026-11-10"
         },
-        "aptaParaCircular": false,
-        "observaciones": "Unidad en mantenimiento preventivo (frenos y alineación)"
+        "aptaParaCircular": true,
+        "observaciones": "Mantenimiento preventivo completado"
       },
       "multas": [
         {
@@ -101,8 +116,9 @@
           "tipo": "Exceso de velocidad",
           "lugar": "Ruta 8 km 35",
           "monto": 90000,
-          "estado": "pendiente",
-          "responsable": "chofer"
+          "estado": "pagada",
+          "responsable": "chofer",
+          "fechaPago": "2026-03-10"
         }
       ],
       "service": [
@@ -111,6 +127,12 @@
           "tipo": "mantenimiento",
           "detalle": "Frenos y alineación",
           "taller": "Taller Central"
+        },
+        {
+          "fecha": "2026-03-28",
+          "tipo": "service",
+          "detalle": "Cambio de pastillas de freno y alineación",
+          "km": 324000
         }
       ]
     },
@@ -121,20 +143,22 @@
       "modelo": "Scania K250",
       "anio": 2017,
       "capacidad": 55,
-      "estado": "activa",
-      "kmTotal": 510000,
-      "kmDesdeUltimoService": 9000,
+      "estado": "mantenimiento",
+      "kmTotal": 522300,
+      "kmDesdeUltimoService": 21300,
       "proximoMantenimientoKm": 15000,
+      "ubicacionActual": "Taller Norte",
+      "choferAsignado": null,
       "habilitaciones": {
         "vtv": {
-          "vigente": false,
-          "vence": "2026-01-15"
+          "vigente": true,
+          "vence": "2027-04-01"
         },
         "seguro": {
           "vigente": true,
           "compania": "Federación Patronal",
           "poliza": "RC-774455",
-          "vence": "2026-04-10"
+          "vence": "2026-10-10"
         },
         "habilitacionTransporte": {
           "organismo": "CNRT",
@@ -144,14 +168,14 @@
         "tacografo": {
           "instalado": true,
           "funcionando": true,
-          "ultimaCalibracion": "2025-10-12"
+          "ultimaCalibracion": "2026-01-20"
         },
         "extintor": {
           "vigente": true,
           "vence": "2026-07-01"
         },
         "aptaParaCircular": false,
-        "observaciones": "VTV vencida, pendiente regularización"
+        "observaciones": "Pendiente service mayor por kilometraje excedido"
       },
       "service": [
         {
@@ -159,6 +183,12 @@
           "tipo": "service",
           "detalle": "Service completo",
           "km": 501000
+        },
+        {
+          "fecha": "2026-04-18",
+          "tipo": "diagnostico",
+          "detalle": "Ingreso a taller para revisión integral",
+          "taller": "Taller Norte"
         }
       ],
       "multas": [
@@ -177,8 +207,9 @@
           "tipo": "Falta de VTV",
           "lugar": "Control municipal",
           "monto": 150000,
-          "estado": "pendiente",
-          "responsable": "empresa"
+          "estado": "pagada",
+          "responsable": "empresa",
+          "fechaPago": "2026-03-02"
         }
       ]
     },
@@ -190,16 +221,18 @@
       "anio": 2015,
       "capacidad": 48,
       "estado": "fuera_de_servicio",
-      "kmTotal": 620000,
-      "kmDesdeUltimoService": 30000,
+      "kmTotal": 623800,
+      "kmDesdeUltimoService": 33800,
       "proximoMantenimientoKm": 15000,
+      "ubicacionActual": "Depósito",
+      "choferAsignado": null,
       "habilitaciones": {
         "vtv": {
           "vigente": true,
           "vence": "2026-06-05"
         },
         "seguro": {
-          "vigente": true,
+          "vigente": false,
           "compania": "Provincia Seguros",
           "poliza": "RC-663322",
           "vence": "2026-03-15"
@@ -219,7 +252,7 @@
           "vence": "2026-08-20"
         },
         "aptaParaCircular": false,
-        "observaciones": "Caja de cambios dañada, unidad inmovilizada"
+        "observaciones": "Caja de cambios dañada y seguro vencido"
       },
       "service": [
         {
@@ -227,6 +260,12 @@
           "tipo": "falla",
           "detalle": "Caja de cambios dañada",
           "reportadoPor": "Chofer Luis Gómez"
+        },
+        {
+          "fecha": "2026-04-05",
+          "tipo": "presupuesto",
+          "detalle": "Presupuesto de reparación de transmisión pendiente aprobación",
+          "taller": "Transmisiones del Sur"
         }
       ]
     },
@@ -241,6 +280,8 @@
       "kmTotal": 780000,
       "kmDesdeUltimoService": 0,
       "proximoMantenimientoKm": null,
+      "ubicacionActual": "Desafectado",
+      "choferAsignado": null,
       "habilitaciones": {
         "vtv": {
           "vigente": false,
@@ -279,6 +320,14 @@
     }
   ],
   "diagrama": {
-    "unidadesNecesariasHoy": 4
+    "unidadesNecesariasHoy": 4,
+    "unidadesOperativas": 2,
+    "unidadesEnMantenimiento": 1,
+    "unidadesFueraDeServicio": 1,
+    "unidadesDeBaja": 1,
+    "alertas": [
+      "Unidad D19 con seguro vencido",
+      "Unidad C03 excedió kilometraje de mantenimiento"
+    ]
   }
 }
