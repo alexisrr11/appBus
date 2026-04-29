@@ -7,7 +7,7 @@
     <title>Gestión de Flota - MVP</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script type="module" src="../scripts/menu.js"></script>
-    <script type="module" src="./reportes.js"></script>
+    <script type="module" src="./estadosGenerales.js"></script>
 </head>
 
 <body class="bg-gray-100 text-gray-800 h-screen flex flex-col">
@@ -35,42 +35,42 @@
                    transform -translate-x-full md:translate-x-0 transition-transform duration-300">
             <nav class="flex-1 p-4 space-y-2">
 
-                <a href="./notificaciones" class="flex items-center gap-2 block px-4 py-2 rounded hover:bg-blue-700">
+                <a href="/notificaciones" class="flex items-center gap-2 block px-4 py-2 rounded hover:bg-blue-700">
                     <span>🔔 Notificaciones</span>
                     <span class="bg-red-500 text-lg rounded-full px-3 font-bold">
                         !
                     </span>
                 </a>
 
-                <a href="./" class="block px-4 py-2 rounded hover:bg-blue-700">
+                <a href="/" class="block px-4 py-2 rounded hover:bg-blue-700">
                     🚍 Toda la Flota
                 </a>
 
-                <a href="./estados-generales" class="block px-4 py-2 rounded hover:bg-blue-700">
+                <a href="/estadosGenerales" class="block px-4 py-2 rounded hover:bg-blue-700">
                     📊 Estados generales
                 </a>
 
-                <a href="./habilitaciones" class="block px-4 py-2 rounded hover:bg-blue-700">
+                <a href="/habilitaciones" class="block px-4 py-2 rounded hover:bg-blue-700">
                     📜Habilitaciones
                 </a>
 
-                <a href="./multas" class="block px-4 py-2 rounded hover:bg-blue-700">
+                <a href="/multas" class="block px-4 py-2 rounded hover:bg-blue-700">
                     🚨 Multas
                 </a>
 
-                <a href="./mantenimiento" class="block px-4 py-2 rounded hover:bg-blue-700">
+                <a href="/mantenimiento" class="block px-4 py-2 rounded hover:bg-blue-700">
                     🔧 Mantenimiento
                 </a>
 
-                <a class="block px-4 py-2 rounded bg-blue-500">
+                <a href="/reportes" class="block px-4 py-2 rounded hover:bg-blue-700">
                     📑Agregar Reportes
                 </a>
 
-                <a href="./agregar-unidad" class="block px-4 py-2 rounded hover:bg-blue-700">
+                <a href="/agregarUnidad" class="block px-4 py-2 rounded hover:bg-blue-700">
                     ➕Agregar unidad
                 </a>
 
-                <a href="./retirar-unidad" class="block px-4 py-2 rounded hover:bg-blue-700">
+                <a class="block px-4 py-2 rounded bg-blue-500">
                     ❌Retirar unidad
                 </a>
 
@@ -84,38 +84,30 @@
         <main class="flex-1 p-6 overflow-auto">
 
             <h2 class="text-3xl text-blue-700 font-bold text-center border-b-4 border-blue-700 mb-6">
-                NUEVOS REPORTES
+                DESVINCULAR UNIDAD
             </h2>
 
-            <div class="bg-white p-6 rounded shadow mb-6">
-                <h3 class="text-xl font-bold text-blue-800 mb-4">Agregar nuevo reporte</h3>
+            <section class="p-6 bg-white rounded shadow mb-6">
+                <h2 class="text-2xl font-bold text-red-600 mb-4">❌ Desvincular unidad</h2>
 
-                <form id="form-reporte" class="space-y-4">
-
+                <form class="space-y-4">
                     <div>
-                        <label class="block text-sm font-medium text-gray-700">Bus (interno)</label>
-                        <select id="bus-reporte" class="mt-1 block w-full p-2 border rounded">
-                            <!-- Opciones se llenan por JS -->
-                        </select>
+                        <label class="block text-sm font-semibold text-gray-700">Interno de la unidad</label>
+                        <input type="text" name="interno" class="w-full p-2 border rounded" placeholder="Ej: A12"
+                            required>
                     </div>
 
                     <div>
-                        <label class="block text-sm font-medium text-gray-700">Fecha</label>
-                        <input type="date" id="fecha-reporte" class="mt-1 block w-full p-2 border rounded" required>
+                        <label class="block text-sm font-semibold text-gray-700">Patente de la unidad</label>
+                        <input type="text" name="patente" class="w-full p-2 border rounded" placeholder="Ej: AB123CD"
+                            required>
                     </div>
 
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Detalle del reporte</label>
-                        <textarea id="detalle-reporte" class="mt-1 block w-full p-2 border rounded" rows="3"
-                            required></textarea>
-                    </div>
-
-                    <button type="submit" class="bg-blue-800 text-white px-4 py-2 rounded hover:bg-blue-900">
-                        Agregar Reporte
+                    <button type="submit" class="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700">
+                        Desvincular unidad
                     </button>
-
                 </form>
-            </div>
+            </section>
 
 
         </main>

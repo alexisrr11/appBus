@@ -30,5 +30,5 @@ function renderDashboard(buses, diagrama) {
 init();
 
 window.irAEstado = function (estado) {
-    window.location.href = `/estado-seleccionado?estado=${estado}`;
+    window.location.href = `/estadosGenerales/estadoSelecionado?estado=${estado}`;
 };
