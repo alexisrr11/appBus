@@ -10,7 +10,7 @@ async function init() {
     return;
   }
 
-  const res = await fetch("../../flota.json");
+  const res = await fetch("/flota.json");
   const data = await res.json();
 
   const busesFiltrados = data.buses.filter(
@@ -57,7 +57,7 @@ function renderUnidad(bus) {
       ${estadoTexto(bus.estado)}
     </p>
 
-    <a href="/historial?id=${bus.id}"
+    <a href="/historial/?id=${bus.id}"
        class="text-blue-500 text-sm mt-3 inline-block">
        Ver historial →
     </a>

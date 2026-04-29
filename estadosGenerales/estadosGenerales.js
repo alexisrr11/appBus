@@ -1,6 +1,6 @@
 async function init() {
     try {
-        const res = await fetch("../flota.json");
+        const res = await fetch("/flota.json");
         const data = await res.json();
 
         renderDashboard(data.buses, data.diagrama);
@@ -30,5 +30,5 @@ function renderDashboard(buses, diagrama) {
 init();
 
 window.irAEstado = function (estado) {
-    window.location.href = `/estadosGenerales/estadoSelecionado?estado=${estado}`;
+    window.location.href = "/estadosGenerales/estadoSelecionado/?estado=activa"
 };
