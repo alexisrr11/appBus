@@ -14,11 +14,11 @@
     },
     {
       "source": "/estados-generales",
-      "destination": "/estadosGenerales.html/estadoGeneral.html"
+      "destination": "/estadosGenerales/estadoGeneral.html"
     },
     {
       "source": "/estado-seleccionado",
-      "destination": "/estadosGenerales.html/estadoSelecionado/estadoSelecionado.html"
+      "destination": "/estadosGenerales/estadoSelecionado/estadoSelecionado.html"
     },
     {
       "source": "/habilitaciones",

@@ -113,7 +113,7 @@ function botonHistorial(bus) {
 
     return `
     <a
-        href="./historial/historial.html?id=${bus.id}"
+        href="/historial?id=${bus.id}"
         class="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 transition whitespace-nowrap"
         >
           <span class="hidden sm:inline">Ver historial</span>
