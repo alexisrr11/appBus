@@ -8,6 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script type="module" src="../scripts/menu.js"></script>
     <script type="module" src="/reportes/reportes.js"></script>
+    <script type="module" src="../scripts/disableModal.js"></script>
 </head>
 
 <body class="bg-gray-100 text-gray-800 h-screen flex flex-col">
@@ -110,7 +111,7 @@
                             required></textarea>
                     </div>
 
-                    <button type="submit" class="bg-blue-800 text-white px-4 py-2 rounded hover:bg-blue-900">
+                    <button type="submit" data-disabled-feature class="bg-blue-800 text-white px-4 py-2 rounded hover:bg-blue-900">
                         Agregar Reporte
                     </button>
 

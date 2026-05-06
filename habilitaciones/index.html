@@ -8,6 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script type="module" src="../scripts/menu.js"></script>
     <script type="module" src="/habilitaciones/habilitaciones.js"></script>
+    <script type="module" src="../scripts/disableModal.js"></script>
 </head>
 
 <body class="bg-gray-100 text-gray-800 h-screen flex flex-col">
@@ -155,7 +156,7 @@
                             Cancelar
                         </button>
 
-                        <button type="submit" class="px-6 py-2 bg-blue-700 text-white rounded hover:bg-blue-800">
+                        <button type="submit" data-disabled-feature class="px-6 py-2 bg-blue-700 text-white rounded hover:bg-blue-800">
                             Guardar habilitación
                         </button>
                     </div>
