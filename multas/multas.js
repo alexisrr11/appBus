@@ -1,10 +1,13 @@
+import { toggleHidden } from "../scripts/script.js";
+
 const container = document.getElementById("multas-container");
 const abrirFormMultas = document.getElementById("abrir-form-multas");
+const formMultas = document.getElementById("form-multa");
+const btnFlitrarMultas = document.getElementById("btn-flitrar-multas");
+const contenedorFiltrarmultas = document.getElementById("contenedor-filtrar-multas");
 
-abrirFormMultas.addEventListener("click", () => {
-    document.getElementById("form-multa").classList.toggle("hidden");
-    abrirFormMultas.textContent = document.getElementById("form-multa").classList.contains("hidden") ? "➕" : "➖";
-});
+toggleHidden(abrirFormMultas, formMultas);
+toggleHidden(btnFlitrarMultas, contenedorFiltrarmultas);
 
 function obtenerFiltros() {
     const params = new URLSearchParams(window.location.search);

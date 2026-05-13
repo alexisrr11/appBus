@@ -1,13 +1,14 @@
+import { toggleHidden } from "../scripts/script.js";
+
 let todosLosMantenimientos = [];
 const abrirFormulario = document.getElementById("abrir-formulario");
 const contenedor = document.getElementById("listado-mantenimientos");
+const formMantenimiento = document.getElementById("form-mantenimiento");
+const btnFlitrarMantenimiento = document.getElementById("btn-flitrar-mantenimiento");
+const contenedorFiltrarMantenimiento = document.getElementById("contenedor-flitrar-mantenimiento");
 
-
-abrirFormulario.addEventListener("click", () => {
-    document.getElementById("form-mantenimiento").classList.toggle("hidden");
-    abrirFormulario.textContent = document.getElementById("form-mantenimiento").classList.contains("hidden") ? "➕" : "➖";
-});
-
+toggleHidden(btnFlitrarMantenimiento, contenedorFiltrarMantenimiento);
+toggleHidden(abrirFormulario, formMantenimiento);
 
 init();
 

@@ -1,13 +1,12 @@
+import { toggleHidden } from "../scripts/script.js";
+
 const contVencidas = document.getElementById("habilitaciones-vencidas");
 const contPorVencer = document.getElementById("habilitaciones-por-vencer");
 const contVigentes = document.getElementById("habilitaciones-vigentes");
 const btnFormHabilitacion = document.getElementById("btn-form-habilitacion");
+const formHabilitacion = document.getElementById("form-habilitacion");
 
-btnFormHabilitacion.addEventListener("click", () => {
-    document.getElementById("form-habilitacion").classList.toggle("hidden");
-    btnFormHabilitacion.textContent = document.getElementById("form-habilitacion").classList.contains("hidden") ? "➕" : "➖";
-});
-
+toggleHidden(btnFormHabilitacion, formHabilitacion);
 init();
 
 async function init() {

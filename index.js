@@ -1,5 +1,15 @@
+import { toggleHidden } from "./scripts/script.js";
+
 const versionApp = "V1.01.1";
 let busesGlobal = [];
+
+//Funcion cambiar display
+const btnBuscarUnidad = document.getElementById("btn-buscar-unidad");
+const contenedorBuscarUnidad = document.getElementById("contenedor-buscar-unidad");
+
+toggleHidden(btnBuscarUnidad, contenedorBuscarUnidad);
+
+//Iniciar app
 
 document.getElementById("version").textContent = versionApp;
 document.addEventListener("DOMContentLoaded", () => {
@@ -24,7 +34,7 @@ async function init() {
 
         const data = await response.json();
 
-        busesGlobal = data.buses; 
+        busesGlobal = data.buses;
         renderFlota(busesGlobal, tablaFlota);
 
         if (!data.buses || !Array.isArray(data.buses)) {
@@ -167,4 +177,3 @@ function aplicarFiltros() {
     const tablaFlota = document.getElementById("tabla-flota");
     renderFlota(filtrados, tablaFlota);
 }
-

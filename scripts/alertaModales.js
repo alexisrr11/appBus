@@ -132,7 +132,7 @@ function mostrarModalAlertas(alertas) {
   }).join("");
 
   modal.innerHTML = `
-    <div class="bg-white rounded-lg shadow-lg p-6 w-[500px] max-h-[80vh] overflow-auto">
+    <div class="bg-white rounded-lg shadow-lg p-6 w-[400px] max-h-[80vh] overflow-auto">
 
       <h2 class="text-2xl font-bold mb-4 text-center">
         🔔 Alertas de la flota

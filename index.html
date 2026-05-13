@@ -76,7 +76,7 @@
 
                 <p id="version" class="absolute bottom-24 text-xs text-center p-3 md:bottom-1"></p>
             </nav>
-            
+
         </aside>
 
         <!-- Overlay mobile -->
@@ -90,31 +90,33 @@
             </h2>
 
             <!-- Filtros -->
-            <div class="bg-white rounded shadow p-4 mb-6 flex flex-col md:flex-row gap-4">
-                <div class="flex flex-col">
-                    <label class="text-sm font-semibold text-gray-600">Estado</label>
-                    <select id="filtro-estado"
-                        class="border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                        <option value="">Todos</option>
-                        <option value="activa" class="text-green-500">🟢Activa</option>
-                        <option value="mantenimiento" class="text-yellow-500">🟡Mantenimiento</option>
-                        <option value="fuera_de_servicio" class="text-red-500">🔴Fuera de servicio</option>
-                        <option value="baja_definitiva">⚫Baja definitiva</option>
-                    </select>
-                </div>
+            <div class="bg-white rounded shadow p-4 mb-6">
+                <h3 class="font-semibold text-center text-lg">Buscar unidad <button id="btn-buscar-unidad">➕</button></h3>
+                <div id="contenedor-buscar-unidad" class="hidden p-4 mb-6 flex flex-col md:flex-row gap-4">
+                    <div class="flex flex-col">
+                        <label class="text-sm font-semibold text-gray-600">Estado</label>
+                        <select id="filtro-estado"
+                            class="border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <option value="">Todos</option>
+                            <option value="activa" class="text-green-500">🟢Activa</option>
+                            <option value="mantenimiento" class="text-yellow-500">🟡Mantenimiento</option>
+                            <option value="fuera_de_servicio" class="text-red-500">🔴Fuera de servicio</option>
+                            <option value="baja_definitiva">⚫Baja definitiva</option>
+                        </select>
+                    </div>
 
-                <div class="flex flex-col">
-                    <label class="text-sm font-semibold text-gray-600">Interno</label>
-                    <input id="filtro-interno" type="text" placeholder="Ej: A12"
-                        class="border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
-                </div>
+                    <div class="flex flex-col">
+                        <label class="text-sm font-semibold text-gray-600">Interno</label>
+                        <input id="filtro-interno" type="text" placeholder="Ej: A12"
+                            class="border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                    </div>
 
-                <div class="flex flex-col">
-                    <label class="text-sm font-semibold text-gray-600">Patente</label>
-                    <input id="filtro-patente" type="text" placeholder="Ej: AB123CD"
-                        class="border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                    <div class="flex flex-col">
+                        <label class="text-sm font-semibold text-gray-600">Patente</label>
+                        <input id="filtro-patente" type="text" placeholder="Ej: AB123CD"
+                            class="border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                    </div>
                 </div>
-
             </div>
 
             <div id="listado-flota" class="bg-white rounded shadow overflow-x-auto">
